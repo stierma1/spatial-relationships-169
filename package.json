@@ -1,0 +1,19 @@
+{
+  "name": "spatial-relationships-169",
+  "version": "1.0.0",
+  "description": "Gives back the spatial relationship operators given 2 ribbons(ie squares)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stierma1/spatial-relationships-169.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stierma1/spatial-relationships-169/issues"
+  },
+  "homepage": "https://github.com/stierma1/spatial-relationships-169#readme"
+}
