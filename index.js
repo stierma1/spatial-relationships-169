@@ -123,16 +123,38 @@ function relate2D(pointA, heightA, widthA, pointB, heightB, widthB, invertY){
 }
 
 function categorize(relation){
-  if(relation[0] === "<" || relation[2] === "<"){
-    return "disjoint"
-  } else if(relation[0] === "|" || relation[2] === "|"){
-    return "joint"
-  } else if(relation[0] === "/" || relation[2] === "/"){
-    return "partial-overlap"
-  } else if(relation[1] === " " && relation[3] === " "){
-    return "contained";
-  } else if(relation[1] === "*" && relations[3] === "*"){
-    return "belonging"
+  for(var i = 0; i < relation.length; i+=2){
+    if(relation[i] === "<"){
+      return "disjoint"
+    }
+  }
+  for(var i = 0; i < relation.length; i+=2){
+    if(relation[i] === "|"){
+      return "joint"
+    }
+  }
+  for(var i = 0; i < relation.length; i+=2){
+    if(relation[i] === "/"){
+      return "partial-overlap"
+    }
+  }
+
+  for(var i = 1; i < relation.length; i+=2){
+    if(relation[i] !== " "){
+      break;
+    }
+    if(i === relation.length - 1){
+      return "contained"
+    }
+  }
+
+  for(var i = 1; i < relation.length; i +=2){
+    if(relation[i] !== "*"){
+      break;
+    }
+    if(i === relation.length - 1){
+      return "belonging"
+    }
   }
 
   return "partial-overlap";
